@@ -1,37 +1,27 @@
 package com.example.addressbook.dto;
 
+import com.example.addressbook.model.AddressBookModel;
+import jakarta.persistence.*;
+
+
 public class AddressBookDTO {
     private String name;
-    private String address;
-    private int id;
+    private String phone;
+    private String email;
 
-    public AddressBookDTO() {} // Default constructor
+    public AddressBookDTO() {}
 
-    public AddressBookDTO(String name, String address,int id) {
-        this.name = name;
-        this.address = address;
-        this.id=id;
-    }
-
-    public String getName() {
-        return name;
+    public AddressBookDTO(AddressBookModel contact) {
+        this.name = contact.getName();
+        this.phone = contact.getPhone();
+        this.email = contact.getEmail();
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-    public int getId(){
-        return id;
-    }
-    public void setId(int id){
-        this.id=id;
-    }
 }
